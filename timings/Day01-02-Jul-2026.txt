@@ -1,7 +1,5 @@
 What I did today
 
-
-
 1.5 hrs - Coding practice
 
 1.5 hrs - AWS EC2
@@ -19,7 +17,7 @@ What I did today
 - Started GitHub push workflow
 
 1 hr - Revised URL, Protocols & IP Addressing
-- URL
+- URL, protocols 
 - HTTP, HTTPS, FTP, SSH
 - Public IP & Private IP
 
