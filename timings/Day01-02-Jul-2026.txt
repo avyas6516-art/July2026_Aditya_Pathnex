@@ -1,0 +1,32 @@
+What I did today
+
+
+
+1.5 hrs - Coding practice
+
+1.5 hrs - AWS EC2
+- Created EC2 instance
+- Connected EC2 to Mac using SSH
+- Practiced Linux commands on EC2
+
+1 hrs - Git & GitHub (basics)
+- Git configuration
+- git init
+- git branch
+- git remote add origin
+- git add
+- git commit
+- Started GitHub push workflow
+
+1 hr - Revised URL, Protocols & IP Addressing
+- URL
+- HTTP, HTTPS, FTP, SSH
+- Public IP & Private IP
+
+Tomorrow's Task
+
+Morning class
+ GitHub 
+Git Branching
+Pull Request (PR)
+Linux Commands Practice
