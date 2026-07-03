@@ -1,0 +1,26 @@
+
+
+  # WHAT I DID TODAY 
+   
+1. Morning class 
+2. Code practice 
+3. git basics
+   - git branch change 
+   - git push 
+4. linux commands practice 
+
+    -ls -la
+    -cd
+    -mv 
+    -cp
+    -head 
+    -tail 
+    -ln 
+    -vim , touch 
+    -cat
+    -find 
+
+
+ 5. Notes 
+
+ 6. watched a show 
