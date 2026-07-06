@@ -1,0 +1,89 @@
+# CODE PRACTICE L2 (D4)  
+
+#Jenkinsfile
+
+pipeline {
+      agent any 
+      stages {
+        stage ('Build') {
+           steps {
+               echo 'Running tests'
+           }
+        }
+        stage('deploy'){
+            steps {
+               echo 'deploy application'
+            }
+        }
+      }
+}
+
+
+# GITLAB CI/CD
+
+stages
+-build 
+-test
+-deploy
+
+build:
+  stage: build 
+  script:
+   - echo "building project"
+
+  test:
+    stage: test 
+    script:
+     - echo "Running tests"
+
+  deploy:
+    stage: deploy
+    script:
+    - echo "deploying application"
+
+    #Ansible
+    
+    -name: install and configure nginx 
+    hosts: All
+    become: yes 
+    tasks:
+    -name: install nginx
+    yum:
+    name: nginxstate: present 
+  -name: configurenginx
+  template:
+  src: nginx.conf.12
+  dest: /etc/nginx/nginx.conf
+  -name: start nginx serviceservice 
+  name: nginxstate: started 
+  enabled: yes
+
+
+  #Terraform
+  resource "aws_security_group" "example" {
+    name.   = "example_security_group"
+    description = "Allow SSHand HTTP"
+    Ingress {
+      from_port = 22
+      to_port  = 22
+      protcol = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]  
+    } 
+    
+    ingress {
+      from_port = 0
+      to_port = 0
+      protocol = "-1"
+      cidr_blocks = {"0.0.0/0."}
+    }
+
+# DOCKER 
+
+from ubuntu:22.04
+RUN apt update && apt install apache2 -yes
+RUN echo "Hello Pathnex" > /var/www/html/index.html
+CMD ["apachectl", "-D", FOREGROUND]
+
+# bash 
+var/www/html
+

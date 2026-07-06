@@ -1,0 +1,17 @@
+     
+    # WHAT I DID TODAY 
+
+1. morning class
+2. linux cmds practice 
+3. shell scripting basics and practice 
+4. git push 
+5. ec2 instance connect
+6. coding practice 
+7. notes making 
+
+  # what will i do tommorow 
+1. morning class 
+2. git revision 
+3. linux cmds practice 
+4. notes 
+5. coding practice
