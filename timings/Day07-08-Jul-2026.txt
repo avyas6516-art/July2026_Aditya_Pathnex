@@ -1,0 +1,19 @@
+ # whaty i did 
+
+1. morning class 
+2. code practice
+3. git push 
+4 git revision 
+5. aws and aws tools 
+-ec2 
+-vpc
+-s3 storage 
+
+
+# what will do tomorrow
+
+
+1. morning class 
+2. aws tools 
+3. code practice 
+4. git push 
