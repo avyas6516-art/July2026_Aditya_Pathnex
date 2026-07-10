@@ -1,0 +1,73 @@
+# L2 code practice (d7)
+
+#ANSIBLE 
+-name: setup nginx with config 
+hosts: all 
+become: yes 
+tasks: 
+   - name: Nginx 
+     state: present 
+   - name: copy custom nginx.config
+     copy: 
+     src: nginx.conf
+     drst: /etc/nginx/nginx.conf
+    -name: start nginx service 
+     service:
+     name: nginx
+     state: started
+     enables: yes
+
+     # Terraform
+
+     resource "aws_iam_role" "ec2_role" {
+      name.               = "pathnex_ec2_role"
+      assume_role_policy. = jsonencode9 { 
+        version = "2012-10-17"
+        statement = [
+
+        ] action = "sts:Assumerole"
+        effect = "allow"
+        principle = {
+          service = "ec2.amazonaws.com"
+
+        }
+      }
+     }
+
+resource "aws_instance" "pathnex_ec2" {
+  ami.         = "ami-0abcd1234abcd1234"
+  instance_type = "t2 medium"
+  iam_instance_profile = aws_iam_role.ec2_role.name
+  tags = {
+    name = "pathnex-ec2"
+
+  }
+}
+#Kubernetes
+apiVersion:   v1
+kind: secret
+metadata: 
+name: pathnex-secret
+type: Opaque
+data:
+ password: cGF0aG5leHBhc3M=
+
+ #shell script 
+ #!/bin/bash
+ tar-czf /var/log/archived_logs.tar.gz /var/log/*.log
+
+ # DOCKER 
+
+ # JavaScriptclass hELLO {
+  PUBLIC STATIC VIOD MAIN(STRING[] args) {
+    System.out.print("hello pathnex"); 
+
+  }
+ }
+
+ # docker File
+ FROM openjdk:17
+ WORKDIR /OPT/PATHNEX/JAVA-App
+ COPY hello.java /opt/pathnex/java-app
+ RUN javac /opt/pathnex/jagva-app/hello.java
+ cmd ["java","-cp","/opt/pathnex/java-app", "Hello"]
