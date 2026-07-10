@@ -1,0 +1,92 @@
+L2 CODE PRACTICE (D8)
+
+# Ansible
+-name: install docker compose 
+hosts: all 
+become: yhes
+ -name: install dependencies 
+  yum:
+     name: "python3-pip"
+     state: present
+  -name: install docker-compose
+    pip:
+     name: docker-compose
+     
+     #Terraform
+     
+     resource "aws_security_group" "allow_ssh_http" {
+      name.       = "allow ssh and http "
+      description = "allow ssh and http access
+      ingress {
+        from_port   = 22
+        to_port     = 22
+        protcol     = "tcp"
+        cidr_blocks = ["0.0.0.0/0"]
+      }
+     }
+
+     resource "aws_instance" "pathnex_ec2" {
+      ami             = "ami-0abcd1234abcd1234
+      instance_type   = "t3.medium"
+      security_groups = [aws_security_group.allow_ssh_http.name]
+
+      ebs_block_device {
+        device_name = "/dev/sdh"
+        volume_size = 30
+
+        #Kubernetes
+        apiversion :v1
+        kind: service
+        metadata:
+           name: pathnex-app 
+           ports:
+           -protocol: TCP
+            port: 80
+            nodeport: 30007
+
+            #Jenkinsfile
+            pipeline {
+             agent any 
+             stages {
+               stage('build docker image) {
+                steps {
+                  script {
+                      docker.build('pathnex-app')
+
+                  }
+                }
+               }
+               stage('push docker image') {
+                 steps {
+                    script{
+                        docker.withregistry('https://docker.io, docker-creden
+                        docker.image('pathnex-app').push('latest)
+                    }
+                 }
+              
+               }
+             }
+
+            }
+      } 
+     }
+     #GitLab
+     stages:
+     -build
+     -push
+
+     build
+       stage: build
+       script:
+        -docker build -t pathnex-app 
+
+        push:
+          stage: pushscript:
+           -docker login -u "$ci_registry_user" -p "$ci_registry_password"
+           -docker push pathnex-app
+
+           #docker
+           FROMalpine:latest
+           workdir?opt/pathnex/alpine-app
+           cmd ["echo", hello pathnex"]
+           
