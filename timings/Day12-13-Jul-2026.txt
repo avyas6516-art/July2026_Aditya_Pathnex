@@ -1,0 +1,11 @@
+ # what i did today
+
+1. code practice 
+2. git push 
+3. revision
+4. watched a show 
+
+# what will i do tomorrow 
+1. morning class 
+2. code practice and git push
+3. kubernetes
