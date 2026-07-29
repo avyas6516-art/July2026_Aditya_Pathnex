@@ -1,0 +1,93 @@
+
+
+# L2 CODE PRACTCIE (D24)
+
+# ANSIBLE 
+
+yaml
+-name: deploy docker container with helm
+hosts: localhost
+tasks:
+  -name: install helm
+   command: curl 
+   command: helm install pathnex-app ./microservice
+
+   # Terraform
+
+   module "pathnex_vpc" {
+    source= "./vpc"
+
+   }
+
+module "pathnex_instance" {
+  source = "./instance"
+  vpc_id = module.pathnex_vpc.vpc_id
+
+}
+
+output "instance_id" {
+  value = module.pathnex_instance.instance_id
+
+}
+
+# Kubernetes
+apiversion: apps/v1
+kind: Deployment
+metadata: 
+  name: pathnex-web-app
+  spec:
+    replicas: 3
+    selector:
+      matchlabels:
+        app: pathnex-web-app
+
+      template:
+      metadata 
+      labels:
+      app: pathnex-web-app
+
+      spec:
+      containers
+      - name: nginx
+       image : nginx
+       ports:
+        -containerport: 80
+
+        apiversion: autoscaling/v2
+        kind: HorizontalPodAutoscaler
+        metadata:
+        name: pathnex-web-app
+
+        minreplicas: 2
+        maxreplicas: 10
+        targetcpuutilization: 80
+
+        #Jenkinsfile
+        pipeline {
+          agent any
+          stages
+          stage
+          step{ 
+            echo 'scaling up jenkins pipeline agents for heavy workloads...'
+            // Simulating scaling loigic
+
+            stage('build') {
+              steps {
+                echo ' building project...'
+              }
+            }
+              }
+            }
+          
+        stage(deploy") { 
+          step {
+            echo 'deploying projects...'
+
+          }
+        }
+
+        #docker
+        #Healthcheck
+
+        from nginx
+        healthcheck cmd curl --fail http://localhost || exit 1
