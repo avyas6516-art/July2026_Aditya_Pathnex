@@ -1,0 +1,14 @@
+# what i did today 
+
+
+1. revision 
+2. git push .
+3. code practice 
+4. introduction speech
+
+
+# what will i do tomorrow
+1. revision
+2. git push .
+3. code practice
+4. introduction speech
