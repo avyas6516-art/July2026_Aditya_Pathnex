@@ -1,0 +1,88 @@
+
+      #l2 code practice
+
+  # ANSIBLE 
+  yaml
+  - name: complete deployment Setup
+  hosts: all
+  become: yes
+  tasks: 
+  - name: deploy nginx, mysql,and redis with docker
+    command: docker-compose -f /path/to/docker-compose.yml up -database
+
+    $ Terraform 
+    resource "aws_vpc" "pathnex_vpc" {
+      cidr_block = "10.0.0.0/16"
+
+    }
+
+    resouce "aws_instance" "pathnex_app" {
+      ami.     = "ami-0123456"
+      instance_type= "t2.medium"
+      subnet_id = aws_subnet.pathnex_subnet.idsecurity_groups = [aws_security_group.pathnex_sg.name]
+      security group = [aws_security_group.pathnex_sg.name]
+
+    }
+
+    #kubernetes 
+    apiversion: app/v1
+    kind: deployment
+    metadata:
+    name: pathnex-app
+    spec: 
+    replicas: 2
+    selector:
+     matchlabels:
+       app: pathnex-app
+
+       template:
+         metadata:
+          labels:
+           app: pathnex-app
+           spec:
+           containers:
+           -name: nginx
+           image: nginxports:
+              - containerport: 80
+
+              apiversion: v1
+              kind: service
+              metadata:
+              name: pathnex-service
+              spec:
+               selector:
+                app: pathnex-app
+                ports: 
+                - port: 80
+                targetport: 80
+
+        # docker
+        from nginx
+        run useradd pathnexuser
+        user pathnexuser
+
+        # commands 
+        docker container prune 
+        docker image prune 
+        docker volume prune
+        docker network prune
+        docker system prune -a 
+
+        # final docker project 
+        version: '3'
+        services:
+         frontend: 
+         Nginx
+         container_nasme: pathnex-frontend
+         ports: 
+         -"80:80"
+         backend :\
+         build: ./backend
+         container_name: pathnex-backend
+         ports
+         - "5000:5000"
+         database:
+         image: mysql:8
+         container_name: pathnex-mysql
+         environment:
+         mysql_root_password: root
