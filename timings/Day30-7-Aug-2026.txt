@@ -1,0 +1,7 @@
+# what to do 
+
+revision aws 
+git push 
+introduction video 
+code practcie
+
